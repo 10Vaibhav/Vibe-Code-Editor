@@ -101,6 +101,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
     },
 
+    // Use JWT sessions to avoid database session creation unless explicitly needed
+    session: { strategy: "jwt" },
+
     secret: process.env.AUTH_SECRET,
 
     adapter: PrismaAdapter(db),
