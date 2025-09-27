@@ -12,7 +12,7 @@ export default function Home() {
       <Image src={"/hero.svg"} alt="Hero-Section" height={500}  width={500}/>
       
       <h1 className=" z-20 text-6xl mt-5 font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-500 to-violet-500 dark:from-blue-400 dark:via-cyan-400 dark:to-violet-400 tracking-tight leading-[1.3] ">
-        Vibe Code With with Intelligence
+        Vibe Code With Intelligence
       </h1>
       </div>
      
