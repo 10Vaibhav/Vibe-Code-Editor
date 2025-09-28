@@ -18,15 +18,14 @@ export default async function DashboardLayout({children}: {children: React.React
     const formattedPlaygroundData = playgroundData?.map((item) => ({
         id:item.id,
         name:item.title,
-        // todo star
-        starred: false,
+        starred: item.starMark?.[0]?.isMarked ?? false,
         icon: technologyIconMap[item.template] || "Code2"
     }));
 
     return (
     <SidebarProvider>
         <div className="flex min-h-screen w-full overflow-x-hidden">
-            <DashboardSidebar initialPlaygroundData={formattedPlaygroundData!}/>
+            <DashboardSidebar initialPlaygroundData={formattedPlaygroundData ?? []}/>
         {/* Dashboard Sidebar */}
             <main className="flex-1">
                 {children}

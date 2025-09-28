@@ -13,9 +13,9 @@ export interface Project {
     title: string,
     description: string,
     template: string,
-    createdAt: Date,
+    createdAT: Date,
     updatedAt: Date,
     userId: string,
     user: User
-    Starmark: {isMarked: boolean}[]
+    starMark: {isMarked: boolean}[]
 }

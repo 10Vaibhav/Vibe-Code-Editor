@@ -1,4 +1,4 @@
-import { getAllPlaygroundForUser } from '@/modules/dashboard/actions';
+import { deletePlaygroundById, duplicateProjectById, editProjectById, getAllPlaygroundForUser } from '@/modules/dashboard/actions';
 import AddNewButton from '@/modules/dashboard/components/add-new';
 import AddRepo from '@/modules/dashboard/components/add-repo';
 import EmptyState from '@/modules/dashboard/components/empty-state';
@@ -14,16 +14,16 @@ const Page = async() => {
         <AddRepo/>
       </div>
 
-      <div>
+      <div className='mt-8'>
         {
           playgrounds && playgrounds.length === 0 ? (
             <EmptyState/>
           ) : (
             <ProjectTable
-            project={playgrounds || []}
-            onDeleteProject={()=>{}}
-            onUpdateProject={()=>{}}
-            onDuplicateProject={()=>{}}
+            projects={playgrounds || []}
+            onDeleteProject={deletePlaygroundById}
+            onUpdateProject={editProjectById}
+            onDuplicateProject={duplicateProjectById}
             />
           )
         }
