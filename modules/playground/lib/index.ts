@@ -1,5 +1,13 @@
 import { TemplateFile, TemplateFolder } from "./path-to-json";
 
+/**
+ * Locate a file within a TemplateFolder tree and return its path.
+ *
+ * @param file - The target TemplateFile to locate; matching is performed by `filename` and `fileExtension`.
+ * @param folder - The TemplateFolder to search within.
+ * @param pathSoFar - Accumulated folder names representing the traversal path (used for recursion).
+ * @returns The slash-joined path to the file (without a leading slash) if found, `null` otherwise.
+ */
 export function findFilePath(
     file: TemplateFile,
     folder: TemplateFolder,
