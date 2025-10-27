@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { metadata } from "@/app/layout";
 import { type NextRequest, NextResponse } from "next/server";
 
 interface CodeSuggestionRequest {
@@ -101,10 +100,7 @@ Framework: ${context.framework}
 
 Context:
 ${context.beforeContext}
-${context.currentLine.substring(
-        0,
-        context.cursorPosition.column
-    )}|CURSOR|${context.currentLine.substring(context.cursorPosition.column)}
+${context.currentLine.substring(0,context.cursorPosition.column)}|CURSOR|${context.currentLine.substring(context.cursorPosition.column)}
 ${context.afterContext}
 
 Analysis:
