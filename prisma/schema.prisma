@@ -29,6 +29,7 @@ model User {
   role     UserRole  @default(USER)
 
   myPlayground Playground[]
+  chatMessages ChatMessage[]
 
   createdAT DateTime   @default(now())
   updatedAt DateTime   @updatedAt
@@ -97,5 +98,17 @@ model TemplateFile {
   updatedAt    DateTime   @updatedAt
   playgroundId String     @unique
   playground   Playground @relation(fields: [playgroundId], references: [id], onDelete: Cascade)
+}
+
+model ChatMessage {
+  id String @id @default(cuid()) @map("_id")
+  userId String
+  role String // "user" or "assistant"
+  content String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
