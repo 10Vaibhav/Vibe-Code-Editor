@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { AIChatSidePanel } from "@/modules/ai-chat/components/ai-chat-sidebarpanel";
 
 
 interface ToggleAIProps {
@@ -46,23 +47,6 @@ const ToggleAI: React.FC<ToggleAIProps> = ({
   activeFeature,
 }) => {
   const [isChatOpen, setIsChatOpen] = useState(false);
-
-  // Dummy handler for code insertion from AI chat panel
-  const handleInsertCode = (code: string, fileName?: string, position?: { line: number; column: number }) => {
-    // TODO: Implement actual code insertion logic
-    // For now, just log the code and info
-    console.log("Insert code:", { code, fileName, position });
-    // You can add your integration with the editor here
-  };
-
-  // Dummy handler for running code from AI chat panel
-  const handleRunCode = (code: string, language: string) => {
-    console.log("Run code:", { code, language });
-  };
-
-  // Dummy activeFile and cursorPosition for demonstration
-  const activeFile = { name: "example.ts", content: "// file content" };
-  const cursorPosition = { line: 1, column: 1 };
 
   return (
     <>
@@ -182,6 +166,10 @@ const ToggleAI: React.FC<ToggleAIProps> = ({
         </DropdownMenuContent>
       </DropdownMenu>
 
+    <AIChatSidePanel
+    isOpen={isChatOpen}
+    onClose={()=> setIsChatOpen(false)}
+    />
     </>
   );
 };
