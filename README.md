@@ -1,7 +1,5 @@
 # VibeCode - Online Code Editor & Playground
 
-A modern, full-featured online code editor and playground platform built with Next.js 15, featuring real-time code execution, AI-powered chat assistance, and collaborative development environments.
-
 ## Overview
 
 VibeCode is a web-based IDE that allows developers to create, edit, and run code directly in the browser using WebContainers technology. It provides a seamless development experience with multiple framework templates, integrated terminal, Monaco editor, and AI assistance.
